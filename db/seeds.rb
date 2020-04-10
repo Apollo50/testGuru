@@ -43,3 +43,9 @@ answers = Answer.create!([
     {body: 'Tags' , correct: true, question_id: questions[3].id },
     {body: 'Functions' , correct: false, question_id: questions[3].id }
  ])
+
+users_passed_tests = UsersPassedTest.create!([
+    { user_id: users[0].id, test_id: tests[0].id },
+    { user_id: users[1].id, test_id: tests[2].id },
+    { user_id: users[1].id, test_id: tests[2].id }
+ ])
