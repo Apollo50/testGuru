@@ -1,4 +1,7 @@
 <h1>Test "<%= @test.title %>" :</h1>
 
-<%= render 'questions/question', questions: @test.questions %>
+<p>
+  <%= link_to 'Back to test list', tests_path %>
+</p>
 
+<%= render 'questions/question', questions: @test.questions %>
