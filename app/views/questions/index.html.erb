@@ -1,9 +1,7 @@
 <h1>Questions:</h1>
 
-<p type="hidden"> <% number = 0 %> </p>
-  <% @test.questions.each do |question| %>
- <p>
-    №<%= number +=1 %>
-    <%= question.body %>
- </p>
-  <% end %>
+<%= render 'question', questions: @questions%>
+
+<p>
+  <%= link_to 'Back to Test', test_path(@test.id) %>
+</p>

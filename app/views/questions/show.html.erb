@@ -1,8 +1,13 @@
 <h1>
-  Question id
-  <%= @question.id %> :
+  Question id:
+  <%= @question.id %>
 </h1>
+
 <p>
   Body:
   <%= @question.body %>
+</p>
+
+<p>
+  <%= link_to 'Back to test', test_path(@question.test.id) %>
 </p>
