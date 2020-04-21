@@ -1,0 +1,2 @@
+module UsersPassedTestsHelper
+end

@@ -9,4 +9,10 @@ Rails.application.routes.draw do
       post :start
     end
   end
+
+  resources :users_passed_tests, on: %i[show update] do
+    member do
+      get :result
+    end
+  end
 end
