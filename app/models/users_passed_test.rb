@@ -28,7 +28,15 @@ class UsersPassedTest < ApplicationRecord
     result >= PASSING_RESULT
   end
 
+  def test_current_question
+    test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
+  end
+
   private
+
+  def before_update_set_next_question
+    self.current_question = next_question
+  end
 
   def before_validation_set_first_question
     self.current_question = test.questions.first if test.present?
@@ -44,10 +52,6 @@ class UsersPassedTest < ApplicationRecord
 
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
-  end
-
-  def before_update_set_next_question
-    self.current_question = next_question
   end
 end
 

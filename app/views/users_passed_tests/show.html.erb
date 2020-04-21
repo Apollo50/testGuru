@@ -1,8 +1,15 @@
 <h1> Passing <%= @passage_test.test.title %> Test </h1>
+<p>
+    <b>
+      <%= @passage_test.current_question.body %>
+    </b>
+</p>
 
-<b>
-  <%= @passage_test.current_question.body %>
-</b>
+<p>
+    <b>
+  Questions: <%= @passage_test.test_current_question %>/<%= @passage_test.test.questions.count %>
+    </b>
+</p>
 
 <%= form_with url: users_passed_test_path(@passage_test), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answer_ids, @passage_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
