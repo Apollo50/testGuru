@@ -6,6 +6,8 @@ class UsersPassedTest < ApplicationRecord
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question
 
+  PASSING_RESULT = 85
+
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
       self.correct_questions += 1
@@ -16,6 +18,14 @@ class UsersPassedTest < ApplicationRecord
 
   def completed?
     current_question.nil?
+  end
+
+  def result
+    100 * self.correct_questions/test.questions.count
+  end
+
+  def success?
+    result >= PASSING_RESULT
   end
 
   private
