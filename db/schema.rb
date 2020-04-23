@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_013013) do
+ActiveRecord::Schema.define(version: 2020_04_20_194953) do
 
   create_table "answers", force: :cascade do |t|
     t.boolean "correct", default: false, null: false
@@ -59,6 +59,9 @@ ActiveRecord::Schema.define(version: 2020_04_14_013013) do
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_question_id"
+    t.integer "correct_questions", default: 0
+    t.index ["current_question_id"], name: "index_users_passed_tests_on_current_question_id"
     t.index ["test_id"], name: "index_users_passed_tests_on_test_id"
     t.index ["user_id"], name: "index_users_passed_tests_on_user_id"
   end
@@ -67,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_013013) do
   add_foreign_key "questions", "tests"
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
+  add_foreign_key "users_passed_tests", "questions", column: "current_question_id"
   add_foreign_key "users_passed_tests", "tests"
   add_foreign_key "users_passed_tests", "users"
 end

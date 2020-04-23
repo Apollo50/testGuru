@@ -1,0 +1,17 @@
+<h1> Result </h1>
+
+<p>
+  <% if @passage_test.success? %>
+    <p class="win">
+      <b> Test passed!</b>
+      Your result: <%= @passage_test.result %>
+    </p>
+  <% else %>
+    <p class="fail">
+      <b>Test failed!</b>
+      Your result: <%= @passage_test.result %>
+    </p>
+  <% end %>
+</p>
+
+<%= link_to 'Back to Tests list', tests_path  %>
