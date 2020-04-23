@@ -3,7 +3,9 @@ class User < ApplicationRecord
   has_many :users_passed_tests
   has_many :tests, through: :users_passed_tests
 
-  validates :name, presence: true
+  validates :email, presence: true
+
+  has_secure_password
 
   def passage_test(test)
     users_passed_tests.order(id: :desc).find_by(test_id: test.id)
