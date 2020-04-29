@@ -62,7 +62,30 @@ div.actions {
   list-style: square; }
 
 .win {
-  color: green; }
+  color: green;
+}
 
 .fail {
-  color: red; }
+  color: red;
+}
+
+.flash {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.message {
+  border-color: red;
+}
+
+.header {
+  padding: 20px;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+.user {
+  float: right;
+}
