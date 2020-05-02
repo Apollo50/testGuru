@@ -4,7 +4,7 @@
   <%= link_to 'Back to test list', admin_tests_path %>
 </p>
 <p>
-  <%= link_to 'Create new question', new_test_question_path(@test.id)  %>
+  <%= link_to 'Create new question', new_admin_test_question_path(@test.id)  %>
 </p>
 
 <table>
@@ -14,6 +14,6 @@
     <th colspan="3">Actions</th>
   </tr>
 
-<%= render 'questions/question', collection: @test.questions %>
+<%= render 'admin/questions/question', collection: @test.questions %>
 
 </table>

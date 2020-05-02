@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :author_tests, class_name: "Test"
+  has_many :author_tests, class_name: "Test", foreign_key: :user_id
   has_many :users_passed_tests
   has_many :tests, through: :users_passed_tests
 
