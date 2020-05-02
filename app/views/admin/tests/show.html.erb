@@ -1,8 +1,7 @@
-<h1>Test "<%= @test.title %>" :</h1>
+<h1>
+  Test "<%= @test.title %>" :
+</h1>
 
-<p>
-  <%= link_to 'Back to test list', admin_tests_path %>
-</p>
 <p>
   <%= link_to 'Create new question', new_admin_test_question_path(@test.id)  %>
 </p>
@@ -14,6 +13,10 @@
     <th colspan="3">Actions</th>
   </tr>
 
-<%= render 'admin/questions/question', collection: @test.questions %>
+<%= render @test.questions %>
 
 </table>
+
+<p>
+  <%= link_to 'Back to test list', admin_tests_path %>
+</p>
