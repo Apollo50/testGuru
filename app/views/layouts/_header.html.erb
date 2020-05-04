@@ -1,9 +1,9 @@
-<div class="header">
-  <% if logged_in? %>
-    <%= link_to 'Log Out', logout_path %>
-    <b class="user"> Welcome, <%= current_user.email %> <%= link_to 'Guru', root_path %></b>
+<div class="nav nav-user">
+  <% if user_signed_in? %>
+    <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+    <b class="nav-admin user"> Welcome, <%= current_user.first_name %> <%= link_to 'Guru', root_path %></b>
   <%else %>
-    <%= link_to 'Sign Up', signup_path %>
-    <%= link_to 'Log In', login_path %>
+    <%= link_to 'Sign Up', new_user_registration_path %>
+    <%= link_to 'Log In', new_user_session_path %>
   <% end %>
 </div>

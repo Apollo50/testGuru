@@ -1,0 +1,30 @@
+<h1>
+  Question id:
+  <%= @question.id %>
+</h1>
+
+<p>
+  Body:
+  <%= @question.body %>
+</p>
+
+<h1> Answers </h1>
+
+<p>
+<%= link_to 'Create new answer', new_admin_question_answer_path(@question) %>
+</p>
+
+<table>
+  <thead>
+  <tr>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <%= render @question.answers %>
+
+</table>
+
+<p>
+  <%= link_to 'Back to test', admin_test_path(@question.test.id) %>
+</p>

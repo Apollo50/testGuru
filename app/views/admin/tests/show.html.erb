@@ -1,0 +1,22 @@
+<h1>
+  Test "<%= @test.title %>" :
+</h1>
+
+<p>
+  <%= link_to 'Create new question', new_admin_test_question_path(@test.id)  %>
+</p>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Body</th>
+    <th colspan="3">Actions</th>
+  </tr>
+
+<%= render @test.questions %>
+
+</table>
+
+<p>
+  <%= link_to 'Back to test list', admin_tests_path %>
+</p>

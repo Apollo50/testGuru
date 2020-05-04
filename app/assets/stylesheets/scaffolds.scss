@@ -75,17 +75,52 @@ div.actions {
   border-radius: 5px;
 }
 
-.message {
-  border-color: red;
+.flash.notice {
+  border-color: #3c85e0;
 }
 
-.header {
+.flash.alert {
+  border-color: #ef2727;
+}
+
+.nav.nav-user {
   padding: 20px;
-  background: #1abc9c;
+  background-color: #1abc9c;
   color: white;
   font-size: 30px;
 }
 
 .user {
   float: right;
+}
+
+.nav.user-email {
+  border-bottom: 1px solid #3c85e0;
+}
+
+.nav.nav-admin {
+  height: 35px;
+  padding: 15px;
+  line-height: 35px;
+  color: #ffffff;
+  background-color: #4293e6;
+  margin-bottom: 40px;
+}
+
+.nav-admin.title {
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.nav-admin.user {
+  float: right;
+}
+
+.nav-admin.user-email {
+  text-decoration: underline;
+}
+
+.nav.nav-admin
+a {
+  color:  #ffffff;
 }
