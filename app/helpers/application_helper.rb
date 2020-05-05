@@ -12,4 +12,12 @@ module ApplicationHelper
       content_tag :p, flash[key], class: 'flash message'
     end
   end
+
+  def test_header(test)
+    if test.persisted?
+      "Edit '#{test.title}' Question"
+    else
+      "Create New  Question"
+    end
+  end
 end

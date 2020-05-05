@@ -18,4 +18,8 @@ class User < ApplicationRecord
   def passed_tests(level)
     tests.where(level: level)
   end
+
+  def admin?
+    is_a?(Admin)
+  end
 end
