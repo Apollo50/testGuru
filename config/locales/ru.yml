@@ -68,6 +68,8 @@ ru:
         are_you_sure: 'Вы уверены?'
 
     answers:
+      update:
+        success: 'Ответ был успешно создан.'
       show:
         question: 'Вопрос: %{body}'
         answer: 'Ответ: %{body}'

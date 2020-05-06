@@ -69,6 +69,8 @@ en:
         are_you_sure: 'Are you sure?'
 
     answers:
+      update:
+        success: 'Answer was successfully updated.'
       show:
         question: 'Question: %{body}'
         answer: 'Anser: %{body}'
