@@ -1,4 +1,11 @@
 ru:
+  users_passed_tests:
+    result:
+      header: 'Результат'
+      result: 'Ваш результат: %{result}'
+      fail: 'Вы провалили тест!'
+      win: 'Вы сдали тест!'
+      back: 'Назад к списку тестов'
 
   tests:
     index:
@@ -117,3 +124,7 @@ ru:
     messages:
       blank: 'Не может быть пустым'
       greater_than: "Уровень теста должен быть в пределах 1..10"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы только что прошли тест на testGuru"

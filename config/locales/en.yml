@@ -1,5 +1,13 @@
 en:
 
+  users_passed_tests:
+    result:
+      header: 'Result'
+      result: 'Your result: %{result}'
+      fail: 'Test failed!'
+      win: 'Test passed!'
+      back: 'Back to Tests list'
+
   tests:
     index:
       tests_header: 'Tests list:'
@@ -115,3 +123,7 @@ en:
     messages:
       blank: "Can't be blank"
       greater_than: "Test level must be 1..10"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the Test"
