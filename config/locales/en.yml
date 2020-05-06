@@ -101,6 +101,17 @@ en:
         body: 'Question body:'
         test_id: 'For test:'
       test:
-        title: "Title"
-        level: "Level"
+        title: 'Title'
+        level: 'Level'
         category_id: 'For category:'
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+
+  errors:
+    messages:
+      blank: "Can't be blank"
+      greater_than: "Test level must be 1..10"

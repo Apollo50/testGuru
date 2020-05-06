@@ -101,6 +101,19 @@ ru:
         body: 'Текст вопроса:'
         test_id: 'Для теста:'
       test:
-        title: "Название"
-        level: "Уровень"
+        title: 'Название'
+        level: 'Уровень'
         category_id: 'Для категории:'
+
+  shared:
+    errors:
+      header:
+        few: 'Обнаружено %{count} ошибки'
+        many: 'Обнаружено %{count} ошибок'
+        one: 'Обнаружено %{count} ошибка'
+        other: 'Обнаружено %{count} ошибки'
+
+  errors:
+    messages:
+      blank: 'Не может быть пустым'
+      greater_than: "Уровень теста должен быть в пределах 1..10"
