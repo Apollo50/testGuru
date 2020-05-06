@@ -89,6 +89,8 @@ en:
         are_you_sure: 'Are you sure?'
 
   helpers:
+    select:
+      prompt: "Please select"
     submit:
       answer:
         update: 'Update answer'

@@ -88,6 +88,8 @@ ru:
         are_you_sure: 'Вы уверены?'
 
   helpers:
+    select:
+      prompt: "Пожалуйста выберете"
     submit:
       answer:
         update: 'Обновить Ответ'
