@@ -1,0 +1,106 @@
+ru:
+
+  tests:
+    index:
+      tests_header: 'Cписок тестов:'
+      test_id: 'Номер'
+      title: 'Название'
+      level: 'Уровень'
+      question_count: 'Кол. вопросов'
+      action: 'Действия'
+    test:
+      start: 'Начать тест'
+
+  admin:
+    tests:
+      index:
+        tests_header: 'Cписок тестов:'
+        test_id: 'Номер'
+        title: 'Название'
+        level: 'Уровень'
+        question_count: 'Кол. вопросов'
+        action: 'Действия'
+        show: 'Посмотреть'
+        edit: 'Изменить'
+        delete: 'Удалить'
+        are_you_sure: 'Вы уверены?'
+        create: 'Создать новый тест'
+      edit:
+        edit: 'Изменить %{title} тест'
+      new:
+        create: 'Создать тест'
+      show:
+        header: 'Тест: %{title}'
+        create: 'Создать новый вопрос'
+        back: 'Назад к списку тестов'
+        number: 'Номер'
+        body: 'Вопрос'
+        actions: 'Действия'
+      test:
+        show: 'Показать'
+        edit: 'Изменить'
+        delete: 'Удалить'
+
+    questions:
+      show:
+        question_body: 'Текст вопроса: %{body}'
+        question_id: 'Номер вопроса: %{id}'
+        questions: 'Ответы:'
+        create_answer: 'Создать новый ответ'
+        back_to_test: 'Назад к тесту'
+      form:
+        back_to_tests_list: 'Назад к тесту'
+      edit:
+        header: 'Изменить вопрос для теста: %{test_title}'
+      new:
+        header: 'Создат новый вопрос для теста: %{test_title}'
+      question:
+        show: 'Показать'
+        edit: 'Изменить'
+        delete: 'Удалить'
+        are_you_sure: 'Вы уверены?'
+
+    answers:
+      show:
+        question: 'Вопрос: %{body}'
+        answer: 'Ответ: %{body}'
+        correct: 'Корректность: %{correct}'
+        back_to_question: 'Назад к вопросу'
+      new:
+        header: 'Создание нового ответа'
+        paragraph: 'Для вопроса: %{body}'
+      edit:
+        header: 'Изменение ответа'
+        paragraph: 'Для вопроса: %{body}'
+      form:
+        back_to_question: 'Назад к вопросу'
+      answer:
+        show: 'Показать'
+        edit: 'Изменить'
+        delete: 'Удалить'
+        are_you_sure: 'Вы уверены?'
+
+  helpers:
+    submit:
+      answer:
+        update: 'Обновить Ответ'
+        create: 'Создать Ответ'
+      question:
+        update: 'Обновить Вопрос'
+        create: 'Создать Вопрос'
+      test:
+        create: 'Создать Тест'
+        update: 'Обновить Тест'
+        start: 'Начать тест!'
+
+    label:
+      answer:
+        body: 'Текст ответа:'
+        correct: 'Корректность:'
+      question:
+        body: 'Текст вопроса:'
+        test_id: 'Для теста:'
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: 'Для категории:'

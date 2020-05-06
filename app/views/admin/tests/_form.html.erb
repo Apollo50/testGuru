@@ -11,7 +11,7 @@
   </p><br>
 
   <p>
-    <%= form.label 'For category:' %>
+    <%= form.label :category_id %>
     <%= form.collection_select :category_id, Category.all, :id, :title %>
   </p>
 

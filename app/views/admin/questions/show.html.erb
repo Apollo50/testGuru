@@ -1,17 +1,15 @@
 <h1>
-  Question id:
-  <%= @question.id %>
+  <%= t('.question_id', id: @question.id) %>
 </h1>
 
 <p>
-  Body:
-  <%= @question.body %>
+  <%= t('.question_body', body: @question.body) %>
 </p>
 
-<h1> Answers </h1>
+<h1> <%= t('.questions') %> </h1>
 
 <p>
-<%= link_to 'Create new answer', new_admin_question_answer_path(@question) %>
+<%= link_to t('.create_answer'), new_admin_question_answer_path(@question) %>
 </p>
 
 <table>
@@ -26,5 +24,5 @@
 </table>
 
 <p>
-  <%= link_to 'Back to test', admin_test_path(@question.test.id) %>
+  <%= link_to t('.back_to_test'), admin_test_path(@question.test.id) %>
 </p>

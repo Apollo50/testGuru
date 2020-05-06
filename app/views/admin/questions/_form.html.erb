@@ -6,12 +6,12 @@
   </p><br>
 
   <p>
-    <%= form.label 'For test:' %>
+    <%= form.label :test_id %>
     <%= form.collection_select :test_id, Test.all, :id, :title %>
   </p>
 
   <p><%= form.submit %></p>
 
-  <p><%= link_to 'Back to test', admin_test_path(@question.test.id) %></p>
-
 <% end %>
+
+  <p><%= link_to t('.back_to_tests_list'), admin_test_path(@question.test.id) %></p>

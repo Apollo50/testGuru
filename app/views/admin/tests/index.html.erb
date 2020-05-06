@@ -1,18 +1,18 @@
-<h1>Tests:</h1>
+<h1><%= t('.tests_header') %></h1>
 
 <table>
   <thead>
     <tr>
-      <th>Test id</th>
-      <th>Title</th>
-      <th>Level</th>
-      <th>Question count</th>
-      <th colspan="3">Action</th>
+      <th><%= t('.test_id') %></th>
+      <th><%= t('.title') %></th>
+      <th><%= t('.level') %></th>
+      <th><%= t('.question_count') %></th>
+      <th colspan="3"><%= t('.action') %></th>
     </tr>
   </thead>
 
   <%= render @tests %>
 </table>
 
-<%= link_to "Create new Test", new_admin_test_path %>
+<%= link_to t('.create'), new_admin_test_path %>
 
