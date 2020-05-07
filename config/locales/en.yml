@@ -1,33 +1,133 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+
+  users_passed_tests:
+    result:
+      header: 'Result'
+      result: 'Your result: %{result}'
+      fail: 'Test failed!'
+      win: 'Test passed!'
+      back: 'Back to Tests list'
+
+  tests:
+    index:
+      tests_header: 'Tests list:'
+      test_id: 'Number'
+      title: 'Title'
+      level: 'Level'
+      question_count: 'Question count'
+      action: 'Action'
+    test:
+      start: 'Start'
+
+  admin:
+    tests:
+      index:
+        tests_header: 'Tests list:'
+        test_id: 'Number'
+        title: 'Title'
+        level: 'Level'
+        question_count: 'Question count'
+        action: 'Action'
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        are_you_sure: 'Are you sure?'
+        create: 'Create new test'
+      edit:
+        edit: 'Edit %{title} test'
+      new:
+        create: 'Create test'
+      show:
+        header: 'Test: %{title}'
+        create: 'Create new question'
+        back: 'Back to tests list'
+        number: 'Number'
+        body: 'Body'
+        actions: 'Action'
+      test:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+
+    questions:
+      show:
+        question_body: 'Question body: %{body}'
+        question_id: 'Question number: %{id}'
+        questions: 'Answers:'
+        create_answer: 'Create new answer'
+        back_to_test: 'Back to test'
+      form:
+        back_to_tests_list: 'Back to test'
+      edit:
+        header: 'Editing question for test: %{test_title}'
+      new:
+        header: 'Creating question : %{test_title}'
+      question:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        are_you_sure: 'Are you sure?'
+
+    answers:
+      update:
+        success: 'Answer was successfully updated.'
+      show:
+        question: 'Question: %{body}'
+        answer: 'Anser: %{body}'
+        correct: 'Correct: %{correct}'
+        back_to_question: 'Back to question'
+      new:
+        header: 'Creating new answer'
+        paragraph: 'For question: %{body}'
+      edit:
+        header: 'Editing answer'
+        paragraph: 'For question: %{body}'
+      form:
+        back_to_question: 'Back to question'
+      answer:
+        show: 'Show'
+        edit: 'Edit'
+        delete: 'Delete'
+        are_you_sure: 'Are you sure?'
+
+  helpers:
+    select:
+      prompt: "Please select"
+    submit:
+      answer:
+        update: 'Update answer'
+        create: 'Create answer'
+      question:
+        update: 'Update question'
+        create: 'Create question'
+      test:
+        create: 'Create test'
+        update: 'Update test'
+        start: 'Start'
+
+    label:
+      answer:
+        body: 'Answer body:'
+        correct: 'Correct:'
+      question:
+        body: 'Question body:'
+        test_id: 'For test:'
+      test:
+        title: 'Title'
+        level: 'Level'
+        category_id: 'For category:'
+
+  shared:
+    errors:
+      header:
+        one: '%{count} error detected'
+        other: '%{count} errors detected'
+
+  errors:
+    messages:
+      blank: "Can't be blank"
+      greater_than: "Test level must be 1..10"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completed the Test"
