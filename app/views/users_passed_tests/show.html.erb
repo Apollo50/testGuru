@@ -1,23 +1,26 @@
-<h1> Passing <%= @passage_test.test.title %> Test </h1>
-<p>
+<h1 class="text text-center"> Passing <%= @passage_test.test.title %> Test </h1>
+
+<div class="card border-primary">
+  <div class="card-header">
     <b>
       <%= @passage_test.current_question.body %>
     </b>
-</p>
+  </div>
 
-<p>
-    <b>
-  Questions: <%= @passage_test.test_current_question %>/<%= @passage_test.test.questions.count %>
-    </b>
-</p>
+  <p class="text-warning mt-3 ml-3">
+    Questions: <%= @passage_test.test_current_question %>/<%= @passage_test.test.questions.count %>
+  </p>
 
-<%= form_with url: users_passed_test_path(@passage_test), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @passage_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object_id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+  <div class="card-body">
+    <%= form_with url: users_passed_test_path(@passage_test), local: true, method: :put do |form| %>
+      <%= form.collection_check_boxes :answer_ids, @passage_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
+        <p>
+          <%= b.check_box id: "answer_ids_#{b.object_id}" %>
+          <%= b.label %>
+        </p>
+      <% end %>
+  </div>
+</div>
 
-  <p><%= form.submit 'Next' %></p>
+<%= form.submit 'Next', class: 'btn btn-warning mt-3' %>
 <% end %>
