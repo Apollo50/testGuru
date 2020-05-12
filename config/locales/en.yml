@@ -7,6 +7,9 @@ en:
       fail: 'Test failed!'
       win: 'Test passed!'
       back: 'Back to Tests list'
+    gist:
+      success: 'Gist was successfully created!'
+      alert: 'An error occurred while saving gist'
 
   tests:
     index:
