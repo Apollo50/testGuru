@@ -134,3 +134,5 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the Test"
+
+  description: "A question about %{title} from testGuru"
