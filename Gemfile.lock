@@ -127,6 +127,9 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
+    octokit (4.18.0)
+      faraday (>= 0.9)
+      sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
     popper_js (1.16.0)
     public_suffix (4.0.4)
@@ -182,6 +185,9 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
@@ -237,6 +243,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   letter_opener
+  octokit (~> 4.0)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   rails-i18n (~> 6.0.0)

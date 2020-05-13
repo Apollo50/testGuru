@@ -7,8 +7,8 @@ ru:
       win: 'Вы сдали тест!'
       back: 'Назад к списку тестов'
     gist:
-      success: 'Gist был успешно создан!'
-      alert: 'При создании Gist произошла ошибка'
+      success: 'Gist был успешно создан! %{gist_url}'
+      failure: 'При создании Gist произошла ошибка'
 
   tests:
     index:

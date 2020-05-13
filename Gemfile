@@ -30,6 +30,8 @@ gem 'devise', '~> 4.0'
 # Networking
 gem 'faraday'
 
+gem "octokit", "~> 4.0"
+
 #Environment variables
 gem 'dotenv-rails', groups: [:development, :test]
 

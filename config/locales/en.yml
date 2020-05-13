@@ -8,8 +8,8 @@ en:
       win: 'Test passed!'
       back: 'Back to Tests list'
     gist:
-      success: 'Gist was successfully created!'
-      alert: 'An error occurred while saving gist'
+      success: 'Gist was successfully created! %{gist_url}'
+      failure: 'An error occurred while saving gist'
 
   tests:
     index:
