@@ -92,6 +92,13 @@ en:
         edit: 'Edit'
         delete: 'Delete'
         are_you_sure: 'Are you sure?'
+    gists:
+      index:
+        header: 'Gists list'
+        question: 'Question'
+        gist_url: 'Gist URL'
+        email: 'User Email'
+        back: 'Back'
 
   helpers:
     select:

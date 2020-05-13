@@ -91,6 +91,13 @@ ru:
         edit: 'Изменить'
         delete: 'Удалить'
         are_you_sure: 'Вы уверены?'
+    gists:
+      index:
+        header: 'Список Gists'
+        question: 'Вопрос'
+        gist_url: 'Ссылка на Gist'
+        email: 'Email пользователя'
+        back: 'Назад к списку тестов'
 
   helpers:
     select:

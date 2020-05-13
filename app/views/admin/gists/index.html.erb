@@ -1,0 +1,15 @@
+<h1><% t('.header') %></h1>
+
+<table class="table table-striped table-dark text-center">
+  <thead>
+  <tr>
+    <th><%= t('.question') %></th>
+    <th><%= t('.gist_url') %></th>
+    <th><%= t('.email') %></th>
+  </tr>
+  </thead>
+
+  <%= render @gists %>
+</table>
+
+<%= link_to t('.back'), admin_root_path, class: 'btn btn-success' %>
