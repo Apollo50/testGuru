@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users_passed_tests, on: %i[show update] do
     member do
       get :result
+      post :gist
     end
   end
 
@@ -27,5 +28,6 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+    resources :gists, only: :index
   end
 end

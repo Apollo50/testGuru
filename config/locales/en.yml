@@ -7,6 +7,9 @@ en:
       fail: 'Test failed!'
       win: 'Test passed!'
       back: 'Back to Tests list'
+    gist:
+      success: 'Gist was successfully created! %{gist_url}'
+      failure: 'An error occurred while saving gist'
 
   tests:
     index:
@@ -89,6 +92,13 @@ en:
         edit: 'Edit'
         delete: 'Delete'
         are_you_sure: 'Are you sure?'
+    gists:
+      index:
+        header: 'Gists list'
+        question: 'Question'
+        gist_url: 'Gist URL'
+        email: 'User Email'
+        back: 'Back'
 
   helpers:
     select:
@@ -131,3 +141,5 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completed the Test"
+
+  description: "A question about %{title} from testGuru"

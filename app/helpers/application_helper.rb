@@ -12,4 +12,8 @@ module ApplicationHelper
       content_tag :p, flash[key], class: 'flash message'
     end
   end
+
+  def gist_hash(gist)
+    gist.gist_url.split('/').last
+  end
 end

@@ -6,6 +6,9 @@ ru:
       fail: 'Вы провалили тест!'
       win: 'Вы сдали тест!'
       back: 'Назад к списку тестов'
+    gist:
+      success: 'Gist был успешно создан! %{gist_url}'
+      failure: 'При создании Gist произошла ошибка'
 
   tests:
     index:
@@ -88,6 +91,13 @@ ru:
         edit: 'Изменить'
         delete: 'Удалить'
         are_you_sure: 'Вы уверены?'
+    gists:
+      index:
+        header: 'Список Gists'
+        question: 'Вопрос'
+        gist_url: 'Ссылка на Gist'
+        email: 'Email пользователя'
+        back: 'Назад к списку тестов'
 
   helpers:
     select:
@@ -132,3 +142,5 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы только что прошли тест на testGuru"
+
+  description: "Вопрос из теста %{title} сервиса testGuru"

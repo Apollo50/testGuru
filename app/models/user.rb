@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :author_tests, class_name: "Test", foreign_key: :user_id
   has_many :users_passed_tests
   has_many :tests, through: :users_passed_tests
+  has_many :gists, dependent: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 
