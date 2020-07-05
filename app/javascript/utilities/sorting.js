@@ -18,8 +18,6 @@
 
             this.querySelector('.octicon-arrow-up').classList.toggle('hide')
             this.querySelector('.octicon-arrow-down').classList.toggle('hide')
-            // this.querySelector('.octicon-arrow-up').classList.remove('hide')
-            // this.querySelector('.octicon-arrow-down').classList.add('hide')
         } else {
             sortedRows.sort(compareRowsDesc)
             this.querySelector('.octicon-arrow-up').classList.toggle('hide')
@@ -57,3 +55,4 @@
         if (testTitle1 > testTitle2) {return -1}
         return 0
     }
+

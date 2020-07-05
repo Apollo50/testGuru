@@ -1,6 +1,21 @@
-.hide {
-  display: none;
-}
+
 .pointer {
   cursor: pointer;
+}
+
+.wrapper {
+  display: inline-block;
+  margin: 0 0 20px 0;
+}
+
+.passMatch {
+  display: inline;
+}
+
+.passNotMatch {
+  display: inline;
+}
+
+.hide {
+  display: none;
 }
