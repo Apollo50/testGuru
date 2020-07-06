@@ -10,15 +10,18 @@ window.addEventListener('turbolinks:load', () =>{
         var passValue = pass.value;
         var confirmValue = passConfirm.value;
 
-        if ( passValue != confirmValue && confirmValue != '' && passValue != '') {
+        if (confirmValue == '' || passValue == '') {
+            form.querySelector('.passNotMatch').classList.add('hide');
+            form.querySelector('.passMatch').classList.add('hide')
+            return
+        }
+
+        if (passValue != confirmValue) {
             form.querySelector('.passNotMatch').classList.remove('hide');
             form.querySelector('.passMatch').classList.add('hide')
-        } else if ( passValue == confirmValue && confirmValue != '' && passValue != '') {
+        } else {
             form.querySelector('.passNotMatch').classList.add('hide');
             form.querySelector('.passMatch').classList.remove('hide')
-        } else if (confirmValue != '' || passValue != '' ) {
-            form.querySelector('.passNotMatch').classList.add('hide');
-            form.querySelector('.passMatch').classList.add('hide')
         }
     }
-})
+});
