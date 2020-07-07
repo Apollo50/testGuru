@@ -32,8 +32,21 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control', placeholder: 'Confirm password' %>
       </p>
+      <div class="wrapper">
+        Passwords match:
+        <div class="passNotMatch hide text-danger">
+          <%= octicon "octoface" %>
+          <span> Oh, no!</span>
+        </div>
+        <div class="passMatch hide text-success">
+          <%= octicon "octoface" %>
+          <span> Yes, cool!</span>
+        </div>
+      </div>
 
-      <%= f.submit "Sign up", class: 'btn btn-primary' %>
+      <p>
+        <%= f.submit "Sign up", class: 'btn btn-primary' %>
+      </p>
     <% end %>
 
     <%= render "devise/shared/links" %>
