@@ -51,6 +51,8 @@ en:
         show: 'Show'
         edit: 'Edit'
         delete: 'Delete'
+      update_inline:
+        success: ""
 
     questions:
       show:
