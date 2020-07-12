@@ -3,8 +3,10 @@ window.addEventListener('turbolinks:load', () =>{
     var pass = document.querySelector('#user_password')
     var passConfirm = document.querySelector('#user_password_confirmation')
 
-    pass.addEventListener('input', passwordMatch );
-    passConfirm.addEventListener('input', passwordMatch );
+    if (pass && passConfirm) {
+        pass.addEventListener('input', passwordMatch );
+        passConfirm.addEventListener('input', passwordMatch );
+    }
 
     function passwordMatch() {
         var passValue = pass.value;
