@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 users = User.create!([
-    {name: :Eugene, password: :eugenepass},
-    {name: :Kate, password: :katepass},
-    {name: :Alex, password: :alexpass},
-    {name: :Bob, password: :bobpass}
+    {first_name: :Eugene, last_name: :Awesome, email: 'exampleEugene@gmail.com', password: :eugenepass},
+    {first_name: :Kate, last_name: :Marley, email: 'exampleKate@gmail.com', password: :katepass},
+    {first_name: :Alex, last_name: :Hoy, email: 'exampleAlex@gmail.com', password: :alexpass},
+    {first_name: :Bob, last_name: :Marley, email: 'exampleBob@gmail.com', password: :bobpass}
  ])
 
 categories = Category.create!([
