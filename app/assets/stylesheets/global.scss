@@ -1,3 +1,21 @@
+@font-face {
+  font-family: 'Regular';
+  src: font_url('regular.ttf') format("truetype");
+
+}
+
+body {
+  font-family: 'Regular', bold, sans-serif;
+  word-spacing: 7px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  margin-bottom: 50px;
+}
+
+.btn-light:hover {
+  background-color: red;
+}
 
 .pointer {
   cursor: pointer;
@@ -18,4 +36,16 @@
 
 .hide {
   display: none;
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  bottom: 0;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
 }

@@ -1,36 +1,36 @@
-<h1 class="text text-center"> Passing <%= @passage_test.test.title %> Test </h1>
+ <h1 class="text text-center"> Passing: <%= @passage_test.test.title %> Test </h1>
 
-<div class="card border-primary">
-  <div class="card-header">
-    <b>
-      <%= @passage_test.current_question.body %>
-    </b>
+  <div class="card border-primary">
+    <div class="card-header">
+      <b>
+        <%= @passage_test.current_question.body %>
+      </b>
+    </div>
+
+    <p class="text-danger mt-3 ml-3">
+      Questions: <%= @passage_test.test_current_question %>/<%= @passage_test.test.questions.count %>
+    </p>
+
+    <div class="progress">
+      <%= content_tag :div, "", class: 'progress-bar bg-success progress-bar-striped',
+                      data: { current_question: @passage_test.test_current_question,
+                              total_questions: @passage_test.test.questions.count },
+                      role: 'progressbar',
+                      value: @passage_test.test_current_question,
+                      max: @passage_test.test.questions.count %>
+    </div>
+
+    <div class="card-body">
+      <%= form_with url: users_passed_test_path(@passage_test), local: true, method: :put do |form| %>
+        <%= form.collection_check_boxes :answer_ids, @passage_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
+          <p>
+            <%= b.check_box id: "answer_ids_#{b.object_id}" %>
+            <%= b.label %>
+          </p>
+        <% end %>
+    </div>
   </div>
 
-  <p class="text-warning mt-3 ml-3">
-    Questions: <%= @passage_test.test_current_question %>/<%= @passage_test.test.questions.count %>
-  </p>
-
-  <div class="progress">
-    <%= content_tag :div, "", class: 'progress-bar bg-success progress-bar-striped',
-                    data: { current_question: @passage_test.test_current_question,
-                            total_questions: @passage_test.test.questions.count },
-                    role: 'progressbar',
-                    value: @passage_test.test_current_question,
-                    max: @passage_test.test.questions.count %>
-  </div>
-
-  <div class="card-body">
-    <%= form_with url: users_passed_test_path(@passage_test), local: true, method: :put do |form| %>
-      <%= form.collection_check_boxes :answer_ids, @passage_test.current_question.answers, :id, :body, include_hidden: false do |b| %>
-        <p>
-          <%= b.check_box id: "answer_ids_#{b.object_id}" %>
-          <%= b.label %>
-        </p>
+<p><%= link_to 'Add question to my gist', gist_users_passed_test_path(@passage_test), method: :post, class: 'btn btn-info mt-3' %></p>
+<%= form.submit 'Next', class: 'btn btn-warning' %>
       <% end %>
-  </div>
-</div>
-
-<p><%= link_to 'Add question to my gist', gist_users_passed_test_path(@passage_test), method: :post %></p>
-<%= form.submit 'Next', class: 'btn btn-warning mt-3' %>
-<% end %>
