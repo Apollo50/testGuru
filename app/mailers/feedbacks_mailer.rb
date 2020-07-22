@@ -4,7 +4,7 @@ class FeedbacksMailer < ApplicationMailer
   def feedback(feedback)
     @feedback = feedback
 
-    mail to: @admin.email, from: @feedback.user.email, subject: " 'TestGuru App' Feedback from #{@feedback.user.email}"
+    mail to: @admin.email, subject: " 'TestGuru App': Feedback from #{@feedback.user.email}"
   end
 
   private
