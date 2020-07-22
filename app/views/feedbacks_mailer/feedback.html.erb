@@ -1,0 +1,15 @@
+<h1> Dear Admin! </h1>
+
+<p>
+  You've got new feedback from 'TestGuru App'
+</p>
+
+<p>
+  From: <%= @feedback.user.first_name %> <br>
+  Email: <%= @feedback.user.email %>
+</p>
+
+<p>
+  Body: <br>
+  <%= @feedback.body %>
+</p>
