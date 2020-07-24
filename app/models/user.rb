@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :author_tests, class_name: "Test", foreign_key: :user_id
-  has_many :users_passed_tests
+  has_many :users_passed_tests, dependent: :nullify
   has_many :tests, through: :users_passed_tests
   has_many :gists, dependent: :destroy
   has_many :feedbacks
