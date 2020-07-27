@@ -1,10 +1,11 @@
-<li>
-  <%= answer.body %><br>
-  <%= link_to t('.show'), admin_answer_path(answer) %>
-  <%= link_to t('.edit'), edit_admin_answer_path(answer) %>
-  <%= link_to t('.delete'),
-              admin_answer_path(answer),
-              method: :delete,
-              data: { confirm: t('.are_you_sure') } %>
-</li>
+<tr>
+  <td> <%= answer.body %><br></td>
+  <td> <%= link_to t('.show'), admin_answer_path(answer), class: 'btn btn-light' %></td>
+  <td> <%= link_to t('.edit'), edit_admin_answer_path(answer), class: 'btn btn-light' %></td>
+  <td>  <%= link_to t('.delete'),
+                    admin_answer_path(answer),
+                    method: :delete,
+                    data: { confirm: t('.are_you_sure') },
+                    class: 'btn btn-light' %></td>
+</tr>
 

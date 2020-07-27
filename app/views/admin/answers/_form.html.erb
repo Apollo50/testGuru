@@ -11,9 +11,9 @@
     <%= form.check_box :correct, id: :answer_correct %>
   </p>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <p>
+    <%= form.submit class: 'btn btn-warning' %>
+  </p>
 <% end %>
 
-<%= link_to t('.back_to_question'), admin_question_path(@answer.question) %>
+<p><%= link_to t('.back_to_question'), admin_question_path(@answer.question), class: 'btn btn-primary' %></p>

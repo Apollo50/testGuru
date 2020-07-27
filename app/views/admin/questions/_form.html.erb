@@ -2,16 +2,16 @@
   <%= render 'shared/errors', resource: @question %>
   <p>
     <%= form.label :body  %><br>
-    <%= form.text_field :body %>
+    <%= form.text_field :body%>
   </p><br>
 
   <p>
     <%= form.label :test_id %>
     <%= form.collection_select :test_id, Test.all, :id, :title %>
-  </p>
+  </p><br>
 
-  <p><%= form.submit %></p>
+  <p><%= form.submit class: 'btn btn-warning'%></p>
 
 <% end %>
 
-  <p><%= link_to t('.back_to_tests_list'), admin_test_path(@question.test.id) %></p>
+  <p><%= link_to t('.back_to_tests_list'), admin_test_path(@question.test.id), class: 'btn btn-primary' %></p>

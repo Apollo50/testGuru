@@ -1,0 +1,21 @@
+<%= form_with model: @feedback, local:true do |form| %>
+  <%= render 'shared/errors', resource: @feedback %>
+
+  <p>
+    <%= form.label :title %> <br>
+    <%= form.text_field :title %>
+  </p>
+
+  <p>
+    <%= form.label :body %> <br>
+    <%= form.text_area :body, rows: 5 %>
+  </p>
+
+  <p>
+    <%= form.submit 'Send'  %>
+  </p>
+<% end %>
+
+<p>
+  <%= link_to 'Back to Main', root_path, class: 'btn btn-primary' %>
+</p>

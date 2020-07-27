@@ -19,5 +19,7 @@ module TestGuru
     # the framework and any gems in your application.
 
     config.autoload_paths << "#{Rails.root}/lib/clients"
+    # app.config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    # app.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end

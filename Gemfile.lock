@@ -136,6 +136,7 @@ GEM
       faraday (>= 0.9)
       sawyer (~> 0.8.0, >= 0.5.3)
     orm_adapter (0.5.0)
+    pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.4)
     puma (4.3.3)
@@ -203,7 +204,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -250,12 +250,12 @@ DEPENDENCIES
   letter_opener
   octicons_helper
   octokit (~> 4.0)
+  pg (~> 1.2, >= 1.2.3)
   puma (~> 4.1)
   rails (~> 6.0.2, >= 6.0.2.2)
   rails-i18n (~> 6.0.0)
   sass-rails (>= 6)
   selenium-webdriver
-  sqlite3 (~> 1.4)
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
