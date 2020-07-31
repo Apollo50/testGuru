@@ -1,0 +1,23 @@
+<%= form_with model: [:admin, @badge], local: true do |form| %>
+  <%= render 'shared/errors', resource: @badge %>
+
+  <p>
+    <%= form.label :title  %><br>
+    <%= form.text_field :title %>
+  </p><br>
+
+  <p>
+    <%= form.label :img_url  %><br>
+    <%= form.text_field :img_url %>
+  </p><br>
+
+  <p>
+    <%= form.label :rule_name %><br>
+    <%= form.text_field :rule_name %>
+  </p>
+
+  <p><%= form.submit class: 'btn btn-warning' %></p>
+
+  <p><%= link_to 'Back to test', admin_tests_path, class: 'btn btn-primary' %></p>
+
+<% end %>

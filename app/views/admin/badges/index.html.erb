@@ -1,0 +1,22 @@
+<h3 class="mt-5 text-center"> Actual awards </h3>
+
+<%if Badge.exists?%>
+  <div>
+    <table class="table text-center">
+      <tr>
+        <th>Name</th>
+        <th>Image url</th>
+        <th>Type</th>
+        <th colspan="2">Actions</th>
+      </tr>
+
+      <%= render @badges %>
+
+    </table>
+  </div>
+
+<%else%>
+  <h2 class="mt-5 text-center"> None awards have been created</h2>
+<%end%>
+
+<p class="text-center"> <%= link_to 'Create new awards', new_admin_badge_path, class: 'btn btn-warning ' %></p>

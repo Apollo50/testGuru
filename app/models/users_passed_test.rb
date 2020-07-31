@@ -2,6 +2,7 @@ class UsersPassedTest < ApplicationRecord
   belongs_to :test
   belongs_to :user
   belongs_to :current_question, class_name: 'Question', optional: true
+  has_and_belongs_to_many :badges, depend: :destroy
 
   before_validation :before_validation_set_first_question, on: :create
   before_update :before_update_set_next_question

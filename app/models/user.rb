@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :tests, through: :users_passed_tests
   has_many :gists, dependent: :destroy
   has_many :feedbacks
+  has_and_belongs_to_many :badges, depend: :destroy
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i.freeze
 

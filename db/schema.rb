@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_232925) do
+ActiveRecord::Schema.define(version: 2020_07_30_110612) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,28 @@ ActiveRecord::Schema.define(version: 2020_07_23_232925) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "body", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "badges", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "img_url", null: false
+    t.string "rule_name", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "badges_users", force: :cascade do |t|
+    t.bigint "badge_id"
+    t.bigint "user_id"
+    t.index ["badge_id"], name: "index_badges_users_on_badge_id"
+    t.index ["user_id"], name: "index_badges_users_on_user_id"
+  end
+
+  create_table "badges_users_passed_tests", force: :cascade do |t|
+    t.bigint "badge_id"
+    t.bigint "users_passed_test_id"
+    t.index ["badge_id"], name: "index_badges_users_passed_tests_on_badge_id"
+    t.index ["users_passed_test_id"], name: "index_badges_users_passed_tests_on_users_passed_test_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -116,6 +138,6 @@ ActiveRecord::Schema.define(version: 2020_07_23_232925) do
   add_foreign_key "tests", "categories"
   add_foreign_key "tests", "users"
   add_foreign_key "users_passed_tests", "questions", column: "current_question_id"
-  add_foreign_key "users_passed_tests", "tests"
+  add_foreign_key "users_passed_tests", "tests", on_delete: :cascade
   add_foreign_key "users_passed_tests", "users"
 end
