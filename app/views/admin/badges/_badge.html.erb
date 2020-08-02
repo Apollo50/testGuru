@@ -1,0 +1,11 @@
+<tr>
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle"><img src="<%= badge.img_url %>" alt="" width="15%"></td>
+  <td class="align-middle"><%= badge.rule_name %></td>
+  <td class="align-middle"><%= link_to 'Show', admin_badge_path(badge), class: "btn btn-primary" %></td>
+  <td class="align-middle"><%= link_to 'Delete',
+                  admin_badge_path(badge),
+                  method: :delete,
+                  data: {confirm: 'Are you sure?'},
+                  class: "btn btn-primary" %></td>
+</tr>

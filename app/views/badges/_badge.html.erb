@@ -1,0 +1,7 @@
+<td>
+  <p> <%= badge.title %> </p>
+  <p>
+    <img src="<%= badge.img_url %>" alt="" width="25%"> :
+    <%= @badges.where(id: badge.id).count %>
+  </p>
+</td>

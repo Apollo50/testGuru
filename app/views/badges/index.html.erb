@@ -1,0 +1,9 @@
+<h3 class="mt-5 text-center"> Actual awards </h3>
+
+<%if @badges.exists? %>
+  <table class="text-center mt-5">
+    <tr> <%= render @badges.distinct %> </tr>
+  </table>
+<%else%>
+  <h2 class="mt-5 text-center"> None awards have been getting</h2>
+<%end%>
