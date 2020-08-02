@@ -36,7 +36,7 @@ class UsersPassedTest < ApplicationRecord
   private
 
   def before_update_set_next_question
-    self.current_question = next_question
+    self.current_question = next_question if current_question
   end
 
   def before_validation_set_first_question

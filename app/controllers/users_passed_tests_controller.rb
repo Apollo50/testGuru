@@ -17,8 +17,12 @@ class UsersPassedTestsController < ApplicationController
   end
 
   def result
-    badge_service = BadgeService.new(@passage_test)
-    badge_service.check_rule
+   if @passage_test.success?
+      @passage_test.update(completed: true)
+
+      badge_service = BadgeService.new(@passage_test)
+      badge_service.check_rule
+    end
   end
 
   def gist

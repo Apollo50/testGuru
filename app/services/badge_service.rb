@@ -22,7 +22,7 @@ class BadgeService
   def first_passing_rule(options={})
     (UsersPassedTest.
         where(user_id: @test_passage.user_id).
-        where(current_question_id: nil).
+        where(completed: true).
         where(test_id: @test_passage.test_id).count == 1)
   end
 
@@ -33,19 +33,14 @@ class BadgeService
 
   def all_categories_rule(badge)
     tests_ids= Test.test_by_category(@test_passage.test.category.title).pluck(:id)
-    passed_tests_count(tests_ids, badge)
+    return passed_tests_count(tests_ids, badge)
   end
 
   def passed_tests_count(tests_ids, badge)
     tests_count = tests_ids.count
-    tests_count_confirm = 0
-
-    tests_ids.each do|id|
-      tests_count_confirm += 1  if (UsersPassedTest.
-                                      where(test_id: id).
-                                      where(user_id: @test_passage.user_id).
-                                      where(current_question_id: nil).count >= 1)
-    end
+    tests_count_confirm = UsersPassedTest.
+                              where(test_id: tests_ids).where(user_id: @test_passage.user.id).
+                              where(current_question_id: nil).distinct.pluck(:test_id).count
 
     return true if tests_count == tests_count_confirm && badge_been_gotten?(badge, tests_ids)
   end
