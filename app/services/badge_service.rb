@@ -39,8 +39,8 @@ class BadgeService
   def passed_tests_count(tests_ids, badge)
     tests_count = tests_ids.count
     tests_count_confirm = UsersPassedTest.
-                              where(test_id: tests_ids).where(user_id: @test_passage.user.id).
-                              where(current_question_id: nil).distinct.pluck(:test_id).count
+                              where(test_id: tests_ids, user_id: @test_passage.user.id, completed: true).
+                              distinct.pluck(:test_id).count
 
     return true if tests_count == tests_count_confirm && badge_been_gotten?(badge, tests_ids)
   end
