@@ -33,6 +33,10 @@ class UsersPassedTest < ApplicationRecord
     test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end
 
+  def set_ded_line
+    (created_at + (test.timer*60)).to_i * 1000
+  end
+
   private
 
   def before_update_set_next_question

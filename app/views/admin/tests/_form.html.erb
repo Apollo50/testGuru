@@ -15,6 +15,11 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p>
 
+  <p>
+    <%= form.label :timer, 'Timer time (in minutes)' %>
+    <%= form.number_field :timer %>
+  </p>
+
   <p><%= form.submit 'Create', class: 'btn btn-warning' %></p>
 
   <p><%= link_to 'Back to test', admin_tests_path, class: 'btn btn-primary' %></p>

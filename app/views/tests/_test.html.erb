@@ -1,5 +1,10 @@
 <tr>
-  <td><%= test.title %></td>
+  <td><%= test.title %>
+    <% if test.has_timer? %>
+      <%= octicon "clock", class: "text text-warning" %>
+      <%= test.timer %> min.
+    <% end %>
+  </td>
   <td><%= test.id %></td>
   <td><%= test.level %></td>
   <td><%= test.questions.count %></td>

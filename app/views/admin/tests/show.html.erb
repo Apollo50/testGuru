@@ -18,5 +18,11 @@
 </table>
 
 <p>
+  <% if @test.has_timer? %>
+  Timer: <%= @test.timer %> min.
+  <% end %>
+</p>
+
+<p>
   <%= link_to t('.back'), admin_tests_path, class: 'btn btn-primary' %>
 </p>

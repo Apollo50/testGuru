@@ -17,4 +17,8 @@ class Test < ApplicationRecord
   def self.tests_names_by_category(category)
     test_by_category(category).order(title: :desc).pluck(:title)
   end
+
+  def has_timer?
+    !timer.nil?
+  end
 end

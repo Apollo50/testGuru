@@ -26,6 +26,22 @@ body {
   margin: 0 0 20px 0;
 }
 
+.timer {
+  position: absolute;
+  top: 92px;
+  left: 30px;
+}
+.info-user {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -38%;
+  margin-top: -13%;
+  z-index: 2;
+  font-size: 8rem;
+  width: 100%;
+}
+
 .passMatch {
   display: inline;
 }
