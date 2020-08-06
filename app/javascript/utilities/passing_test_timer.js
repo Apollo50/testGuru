@@ -1,6 +1,8 @@
 document.addEventListener('turbolinks:load', function () {
-    let dedLine = gon.ded_line;
-    if (document.querySelector('.timer')) {setClock('.timer', dedLine)}
+    if (document.querySelector('.timer')) {
+        let deadLine = document.querySelector('.info-user').dataset.timer;
+        setClock('.timer', deadLine)
+    }
 
     function getTimeRemaining(endtime) {
         let t = endtime - Date.parse(new Date()),
@@ -31,8 +33,7 @@ document.addEventListener('turbolinks:load', function () {
                 clearInterval(timeInterval);
                 infoUser();
                 setTimeout(function() {
-                    window.location.href = gon.result;
-                    return 0;
+                    window.location.href = window.location.pathname + "/result";
                 }, 2000);
 
             }

@@ -33,8 +33,12 @@ class UsersPassedTest < ApplicationRecord
     test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end
 
-  def set_ded_line
+  def set_dead_line
     (created_at + (test.timer*60)).to_i * 1000
+  end
+
+  def time_over?
+    test.has_timer? ? (set_dead_line < Time.now.to_i * 1000) : false
   end
 
   private

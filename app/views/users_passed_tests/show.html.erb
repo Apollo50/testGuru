@@ -8,7 +8,8 @@
           <span>:</span>
           <span class="seconds"></span>
         </div>
-        <span class="info-user text text-danger hide"> Time is over!</span>
+      <%= content_tag :span,'Time is over!', class: 'info-user text text-danger hide', data: { timer: @passage_test.set_dead_line}  %>
+<!--        <span class="info-user text text-danger hide"> Time is over!</span>-->
     <% end %>
 
   <div class="card border-primary">
