@@ -1,7 +1,6 @@
 class UsersPassedTestsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_passage_test, only: %i[show update result gist]
-  before_action :check_timer, only: %i[update]
 
   def show
   end
@@ -9,7 +8,7 @@ class UsersPassedTestsController < ApplicationController
   def update
     @passage_test.accept!(params[:answer_ids]) if params[:answer_ids]
 
-    if @passage_test.completed?
+    if @passage_test.completed? || @passage_test.time_over?
       redirect_to result_users_passed_test_path(@passage_test)
     else
       render :show
@@ -43,12 +42,6 @@ class UsersPassedTestsController < ApplicationController
   end
 
   private
-
-  def check_timer
-    return unless @passage_test.time_over?
-
-    redirect_to result_users_passed_test_path(@passage_test) && (return)
-  end
 
   def create_gist(url)
     current_user.gists.create(question: @passage_test.current_question, gist_url: url )
