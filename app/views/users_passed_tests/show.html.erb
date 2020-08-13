@@ -1,4 +1,16 @@
- <h1 class="text text-center"> Passing: <%= @passage_test.test.title %> Test </h1>
+    <h1>
+      Passing: <%= @passage_test.test.title %> Test
+    </h1>
+
+    <% if @passage_test.test.has_timer? %>
+        <div class="timer h2">
+          <span class="minutes"></span>
+          <span>:</span>
+          <span class="seconds"></span>
+        </div>
+      <%= content_tag :span,'Time is over!', class: 'info-user text text-danger hide', data: { timer: @passage_test.time_left}  %>
+<!--        <span class="info-user text text-danger hide"> Time is over!</span>-->
+    <% end %>
 
   <div class="card border-primary">
     <div class="card-header">

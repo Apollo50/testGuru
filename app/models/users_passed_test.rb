@@ -33,6 +33,14 @@ class UsersPassedTest < ApplicationRecord
     test.questions.count - test.questions.order(:id).where('id > ?', current_question.id).count
   end
 
+  def time_left
+    (created_at + (test.timer*60)).to_i * 1000
+  end
+
+  def time_over?
+    test.has_timer? ? (time_left < Time.now.to_i * 1000) : false
+  end
+
   private
 
   def before_update_set_next_question

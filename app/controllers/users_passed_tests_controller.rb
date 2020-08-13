@@ -8,8 +8,7 @@ class UsersPassedTestsController < ApplicationController
   def update
     @passage_test.accept!(params[:answer_ids]) if params[:answer_ids]
 
-    if @passage_test.completed?
-      TestsMailer.completed_test(@passage_test).deliver_now
+    if @passage_test.completed? || @passage_test.time_over?
       redirect_to result_users_passed_test_path(@passage_test)
     else
       render :show
@@ -17,6 +16,8 @@ class UsersPassedTestsController < ApplicationController
   end
 
   def result
+    TestsMailer.completed_test(@passage_test).deliver_now
+
    if @passage_test.success?
       @passage_test.update(completed: true)
 
